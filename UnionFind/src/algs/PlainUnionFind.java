@@ -1,4 +1,4 @@
-package org.rusjum.algs;
+package algs;
 
 /**
  * Simple implementation of Union find with array.

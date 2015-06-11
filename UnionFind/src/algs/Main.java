@@ -1,4 +1,4 @@
-package org.rusjum.algs;
+package algs;
 
 /**
  * Test class for UnionFind problems
