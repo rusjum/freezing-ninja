@@ -9,19 +9,15 @@ package algs;
  * Created by rusjum on 6/11/2015.
  */
 
-public class PlainUnionFind {
+public class PlainUnionFind extends UnionFind {
 
-    // array to store elements
-    private int[] storage;
     /**
-     * Constructor for PlainUnionFind
+     * Constructor for UnionFind, init each element to its own index
      *
-     * @param n - number of elements
+     * @param N - number of elements
      */
-    public PlainUnionFind(int n) {
-        storage = new int[n];
-        for (int i = 0; i < n; ++i)
-            storage[i] = i;
+    public PlainUnionFind(int N) {
+        super(N);
     }
 
     /**
@@ -31,6 +27,7 @@ public class PlainUnionFind {
      * @param q - index of a second element
      * @return true if elements are connected, false otherwise
      */
+    @Override
     public boolean isConnected(int p, int q) {
         return storage[p] == storage[q];
     }
@@ -42,6 +39,7 @@ public class PlainUnionFind {
      * @param p - index of a first element
      * @param q - index of a second element
      */
+    @Override
     public void connect(int p, int q) {
         if (!isConnected(p, q)) {
             int curIdx = storage[q];
