@@ -22,7 +22,7 @@ public class QuickUnion extends UnionFind {
      * @param el - id of the element root of which is required
      * @return id of the root of the element
      */
-    private int root(int el) {
+    protected int root(int el) {
         while (el != storage[el])
             el = storage[el];
         return el;
@@ -39,6 +39,12 @@ public class QuickUnion extends UnionFind {
         return root(p) == root(q);
     }
 
+    /**
+     * Connects two elements
+     *
+     * @param p - index of a first element
+     * @param q - index of a second element
+     */
     @Override
     public void connect(int p, int q) {
         int rootP = root(p);
