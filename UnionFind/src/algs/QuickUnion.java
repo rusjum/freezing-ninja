@@ -23,8 +23,10 @@ public class QuickUnion extends UnionFind {
      * @return id of the root of the element
      */
     protected int root(int el) {
-        while (el != storage[el])
+        while (el != storage[el]) {
+            storage[el] = storage[storage[el]];
             el = storage[el];
+        }
         return el;
     }
     /**
